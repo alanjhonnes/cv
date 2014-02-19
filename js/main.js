@@ -11,7 +11,8 @@ $(document).ready(function(){
         console.log('W: ' + width + ' H: ' + height);
         if(width > 991){
             $header.css('height', height);
-            $('header li span').css('lineHeight', (height / 5) + 'px');
+            var size = (height / 5) + 'px';
+            $('header li span').css('lineHeight', size);
         }
         else {
             $header.css('height', 'auto');

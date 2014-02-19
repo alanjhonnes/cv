@@ -193,8 +193,8 @@ h4, h5, h6 {
     -moz-transition: color 0.35s;
     -ms-transition: color 0.35s;
     -o-transition: color 0.35s;
-    transition: color 1s;
-    -webkit-transition: background-color color 0.35s;-moz-transition: background-color 0.35s;-ms-transition: background-color 0.35s;-o-transition: background-color 0.35s;transition: background-color 0.35s;
+    transition: color 0.35s;
+    -webkit-transition: background-color 0.35s;-moz-transition: background-color 0.35s;-ms-transition: background-color 0.35s;-o-transition: background-color 0.35s;transition: background-color 0.35s;
 }
 
 #header li span {
@@ -205,6 +205,21 @@ h4, h5, h6 {
     background-color: #00b3ff;
     color: #fff;
 }
+
+/*#header li:after, #header li:before {
+    opacity: 1;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    border: solid #1883ba 1px;
+    margin-top: 30px;
+    margin-left: 30px;
+    -webkit-transition: all 0.35s;-moz-transition: all 0.35s;-ms-transition: all 0.35s;-o-transition: all 0.35s;transition: all 0.35s;
+}*/
 
 @media only screen and (max-width: 991px) {
     #header {
@@ -227,14 +242,6 @@ h4, h5, h6 {
         padding-top: 60px;
     }
 }
-
-
-
-
-
-
-
-
 
 
 /* ==========================================================================
