@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $("html").niceScroll();
+    //$("html").niceScroll();
 
     var $header = $('header');
     var $window = $(window);
@@ -18,7 +18,23 @@ $(document).ready(function(){
             $header.css('height', 'auto');
             $('header li span').css('lineHeight', '70px');
         }
+        
+        $('section').css('min-height', height + 'px');
 
     }).resize();
+    
+    
+    //Item menu click
+    $items = $('header ul li');
+    $items.click(function(){
+        $items.removeClass('active-section');
+        $(this).addClass('active-section');
+        
+        //scroll down to the respective section
+        var yOffset = $("section:eq(" + $(this).index() + ")").offset().top;
+        TweenLite.to(window, 0.6, { scrollTo: { y: yOffset } } );
+        
+        
+    });
 
 });
