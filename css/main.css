@@ -159,6 +159,7 @@ textarea {
 body {
     font-family: 'open_sanslight';
     background-color: #00A4FF;
+    color: #fff;
 }
 
 h1, h2, h3 {
@@ -230,6 +231,7 @@ section:after {
 }
 
 #header li {
+    color: #333;
     cursor: pointer;
     font-size: 32px;
     list-style-type: none;
