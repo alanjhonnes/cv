@@ -179,6 +179,12 @@ h4, h5, h6 {
 section {
     min-height: 100%;
     padding: 10px;
+    border-top: 1px solid #333;
+}
+
+section:fist-child {
+    border-top-width: 0px;
+    cli
 }
 
 section:after {
@@ -257,20 +263,105 @@ section:after {
     line-height: 80px;
 }
 
-/*#header li:after, #header li:before {
-    opacity: 1;
-    width:50px;
-    height: 50px;
-    border-radius: 50%;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 10;
-    border: solid #1883ba 1px;
-    margin-top: 30px;
+
+
+#about h1, #about h2, #about h3 {
+    padding: 8px;
+    display: inline-block;
+}
+
+#about h1 {
+    padding: 8px 8px 14px;
+}
+
+#about h2 {
     margin-left: 30px;
-    -webkit-transition: all 0.35s;-moz-transition: all 0.35s;-ms-transition: all 0.35s;-o-transition: all 0.35s;transition: all 0.35s;
-}*/
+}
+
+#about-name span {
+    border-bottom: #b3d4fc solid 4px;
+}
+
+.subline {
+    
+}
+
+.light {
+    background-color: #EEE;
+    color: #333;
+}
+
+.dark {
+    background-color: #333;
+    color: #eee;
+}
+
+.light span {
+    
+}
+
+.dark span {
+    
+}
+
+#about .section-title {
+    
+}
+
+.section-content {
+    top: 50%;
+    
+}
+
+section .section-content {
+    position: relative;
+    margin: 0;
+}
+
+.section-title {
+    clear: both;
+    color: #fff;
+    display: inline-block;
+    background-color: #333;
+    padding: 0px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.section-title:before {
+    content: "";   
+    margin-left: 6px;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+    height: 42px;
+    width: 4px;
+    background-color: #fff;
+}
+
+.section-title:after {
+    content: " ";  
+    clear: both;
+}
+
+.section-title span {
+    padding-left: 10px;
+    padding-right: 14px;
+}
+
+#skills ul li {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    list-style-type: none;
+    padding: 4px;
+}
+
+#skills li span {
+    border-bottom: #1DCCB1 solid 2px;
+}
+
 
 @media only screen and (max-width: 991px) {
     #wrapper {
@@ -303,7 +394,7 @@ section:after {
     }
 
     #container {
-        padding-top: 60px;
+        padding-top: 70px;
     }
 }
 

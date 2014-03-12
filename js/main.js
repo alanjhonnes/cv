@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    //$("html").niceScroll();
+    $("html").niceScroll();
 
     var $header = $('header');
     var $window = $(window);
@@ -14,6 +14,7 @@ $(document).ready(function(){
     var $activeButton = $buttons.eq(0);
     var activeIndex = 0;
     var scrollpoints = [];
+    var navHeight = 0;
 
     $activeButton.addClass("active-section");
     
@@ -25,15 +26,24 @@ $(document).ready(function(){
             $header.css('height', windowHeight);
             var size = (windowHeight / 5) + 'px';
             $('header li span').css('lineHeight', size);
+            navHeight = 0;
             mobileMode = false;
         }
         else {
             $header.css('height', 'auto');
-            $('header li span').css('lineHeight', '70px');
+            navHeight = 70;
+            $('header li span').css('lineHeight', navHeight + 'px');
             mobileMode = true;
         }
-        $('section').css('min-height', windowHeight + 'px');
+        $sections.css('min-height', (windowHeight -navHeight)+ 'px');
+        
         calculateScrollpoints();
+        
+        $sections.each(function(){
+            var $sectionContent = $(this).children(".section-content");
+            var sectionOffset = ($(this).height() - $sectionContent.height()) / 2;
+           $sectionContent.css("top", sectionOffset + "px");
+        });
 
     }).resize();
     
