@@ -10,29 +10,31 @@ $(document).ready(function(){
     
     
     var $buttons = $("header li");
+    var $icons = $('header li span');
     var $sections = $("section");
     var $activeButton = $buttons.eq(0);
+    var $activeSection = $sections.eq(0);
     var activeIndex = 0;
     var scrollpoints = [];
     var navHeight = 0;
 
-    $activeButton.addClass("active-section");
+    $activeButton.addClass("active-button");
     
     $window.resize(function(){
         windowWidth = $window.width();
         windowHeight = $window.height();
-        console.log('W: ' + windowWidth + ' H: ' + windowHeight);
+        //console.log('W: ' + windowWidth + ' H: ' + windowHeight);
         if(windowWidth > 991){
             $header.css('height', windowHeight);
             var size = (windowHeight / 5) + 'px';
-            $('header li span').css('lineHeight', size);
+            $icons.css('lineHeight', size);
             navHeight = 0;
             mobileMode = false;
         }
         else {
             $header.css('height', 'auto');
             navHeight = 70;
-            $('header li span').css('lineHeight', navHeight + 'px');
+            $icons.css('lineHeight', navHeight + 'px');
             mobileMode = true;
         }
         $sections.css('min-height', (windowHeight -navHeight)+ 'px');
@@ -51,12 +53,7 @@ $(document).ready(function(){
         scrollpoints = [];
         $sections.each(function() {
             var offset;
-            if(mobileMode){
-                offset = $(this).offset().top - 70;
-            }
-            else {
-                 offset = $(this).offset().top;
-            }
+            offset = $(this).offset().top - navHeight;
             scrollpoints.push(offset);
         });
     }
@@ -68,10 +65,13 @@ $(document).ready(function(){
         while (totalPoints--) {
             if (scrollpoints[totalPoints] <= scrolled) {
                 if (activeIndex !== totalPoints) {
-                    $activeButton.removeClass("active-section");
+                    $activeButton.removeClass("active-button");
                     activeIndex = totalPoints;
                     $activeButton = $buttons.eq(totalPoints);
-                    $activeButton.addClass("active-section");
+                    $activeButton.addClass("active-button");
+                    $activeSection.removeClass('active-section');
+                    $activeSection = $sections.eq(activeIndex);
+                    $activeSection.addClass('active-section');
                 }
                 break;
             }
@@ -79,16 +79,13 @@ $(document).ready(function(){
     });
     
     
-    $items = $('header ul li');
+    var $items = $('header ul li');
     $items.click(function(){
-        $items.removeClass('active-section');
-        $(this).addClass('active-section');
-        console.log(mobileMode);
+        $items.removeClass('active-button');
+        $(this).addClass('active-button');
+        var sectionIndex = $(this).index();
         //scroll down to the respective section
-        var yOffset = $("section:eq(" + $(this).index() + ")").offset().top;
-        if(mobileMode){
-            yOffset -= 70;
-        }
+        var yOffset = $("section:eq(" + sectionIndex + ")").offset().top - navHeight;
         TweenLite.to(window, 0.6, { scrollTo: { y: yOffset } } );
         
         
