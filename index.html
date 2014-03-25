@@ -31,7 +31,16 @@
                         <h2 class="section-title"><span>ABOUT ME</span></h2>
                         </div>
                         <div id="logo">
-                            <!--<img src="img/profile.jpg" alt=""/>-->
+                            <!--
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" width="192.063px" height="452.381px" viewBox="0 0 192.063 452.381" enable-background="new 0 0 192.063 452.381" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+                                <g id="logo-group">
+                                    <polygon id="poly-1" stroke="#22B573" stroke-miterlimit="10" points="115.099,1.757 164.067,284.367 87.486,69.995 "/>
+                                    <polygon id="poly-2" stroke="#00A4FF" stroke-miterlimit="10" points="0,285.714 86.942,71.352 108.171,130.841 "/>
+                                    <polygon id="poly-3" stroke="#1DCCB1" stroke-miterlimit="10" points="0,452.381 163.663,284.586 190.897,287.069 "/>
+                                    <polygon id="poly-4" stroke="#04ACED" stroke-miterlimit="10" points="164.907,283.729 191.412,286.122 115.62,0 "/>
+                                </g>
+                            </svg>
+                            -->
                         </div>
 
 
@@ -101,17 +110,22 @@
                         </article>
                     </div>
                 </section>
-                <section id="skills">
+                <section id="skills" class="container-fluid">
                     <div class="section-content row">
-                        <div class="col-xs-12">
-                        <h2 class="section-title"><span>SKILLS</span></h2>
+                        <div>
+                            <h2 class="section-title"><span>SKILLS</span></h2>
                         </div>
-                        <div id="skills-canvas">
+                        <div id="skills-canvas" class="">
                             <article id="frontend-skills" class="col-sm-6">
-                                <h1>FRONTEND</h1>
-                                <div class="skills-icon">
-                                    
+                                
+                                <div class="skills-icon" data-perc="0.85">
+                                    <div class="fill">
+                                        <div class="slice-left"></div>
+                                        <div class="slice-right"></div>
+                                    </div>
+                                    <div class="perc">85%</div>
                                 </div>
+                                <h1>FRONTEND</h1>
                                 <ul>
                                     <li><span>HTML5</span></li>
                                     <li><span>CSS3</span></li>
@@ -119,12 +133,21 @@
                                     <li><span>Responsive</span></li>
                                     <li><span>Bootstrap</span></li>
                                     <li><span>Less</span></li>
-                                    <li><span>UI</span></li>
+                                    <li><span>UX</span></li>
                                 </ul>
                             </article>
                             <article id="backend-skills" class="col-sm-6">
+                                
+                                <div class="skills-icon" data-perc="0.75">
+                                    <div class="fill">
+                                        <div class="slice-left"></div>
+                                        <div class="slice-right"></div>
+                                    </div>
+                                    <div class="perc">75%</div>
+                                </div>
                                 <h1>BACKEND</h1>
                                 <ul>
+                                    
                                     <li><span>PHP</span></li>
                                     <li><span>SQL</span></li>
                                     <li><span>Symphony</span></li>
@@ -135,15 +158,31 @@
                                 </ul>
                             </article>
                             <article id="design-skills" class="col-sm-6">
+                                
+                                <div class="skills-icon" data-perc="0.6">
+                                    <div class="fill">
+                                        <div class="slice-left"></div>
+                                        <div class="slice-right"></div>
+                                    </div>
+                                    <div class="perc">60%</div>
+                                </div>
                                 <h1>DESIGN</h1>
                                 <ul>
                                     <li><span>Photoshop</span></li>
                                     <li><span>Illustrator</span></li>
                                     <li><span>Wireframing</span></li>
-                                    <li><span>YML</span></li>
+                                    <li><span>UI</span></li>
                                 </ul>
                             </article>
                             <article id="teamwork-skills" class="col-sm-6">
+                                
+                                <div class="skills-icon" data-perc="0.9">
+                                    <div class="fill">
+                                        <div class="slice-left"></div>
+                                        <div class="slice-right"></div>
+                                    </div>
+                                    <div class="perc">90%</div>
+                                </div>
                                 <h1>TEAMWORK</h1>
                                 <ul>
                                     <li><span>Github</span></li>
@@ -166,13 +205,15 @@
         </div>
 
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/bootstrap.js"></script>
         <script src="js/raphael.js"></script>
         <script src="js/gsap/TweenMax.js"></script>
         <script src="js/gsap/plugins/ScrollToPlugin.js"></script>
         <script src="js/vendor/jquery.nicescroll.js"></script>
+        <script src="js/vendor/jquery.superscrollorama.js"></script>
+        <script src="js/vendor/jquery.circlepercentage.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

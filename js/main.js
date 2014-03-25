@@ -90,5 +90,31 @@ $(document).ready(function(){
         
         
     });
+    
+    var logoTimeline = new TimelineLite();
+    logoTimeline.to('#poly-1', 2, { rotation: 180 } );
+    
+    logoTimeline.play();
+    
+    var controller = $.superscrollorama({
+        triggerAtCenter: true,
+        playoutAnimations: true
+    });
 
+//  var agenciaTimeline = new TimelineLite();
+
+//  controller.addTween('#agencia',
+//          agenciaTimeline.from($('#agencia-box'), 0.6, {width: 0})
+//          .from($('#agencia-content'), 0.6, {autoAlpha: 0})
+//          );
+    $(".skills-icon").circlePercentage();
+
+    var skillsTimeline = new TimelineLite();
+
+//    controller.addTween('#skills',
+//                $(".skills-icon").circlePercentage("animate")
+//            );
+    
+    
+    
 });

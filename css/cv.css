@@ -138,6 +138,9 @@ section {
   min-height: 100%;
   padding: 10px;
   border-top: 1px solid #333;
+  background-image: -webkit-radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: -moz-radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
 section:fist-child {
   border-top-width: 0px;
@@ -193,6 +196,9 @@ section:after {
   height: 100%;
 }
 #header li {
+  background-image: -webkit-radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: -moz-radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: radial-gradient(center center, ellipse cover, rgba(34, 34, 34, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
   color: #333;
   cursor: pointer;
   font-size: 32px;
@@ -322,59 +328,90 @@ section .section-content {
 #formation article {
   padding-top: 10px;
 }
-.skills-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: #ffffff solid 2px;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+#skills #skills-canvas {
+  margin-top: 30px;
 }
-.skills-icon:after {
-  margin-left: -2px;
-  margin-top: -2px;
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: #ffffff solid 1px;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out 0.1s;
-  transition: all 0.3s cubic-bezier 0.1s;
+#skills article {
+  min-height: 160px;
 }
-.skills-icon:before {
-  margin-left: -2px;
-  margin-top: -2px;
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: #ffffff solid 1px;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+#skills article .skills-icon {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-.skills-icon:hover:before {
-  opacity: 0.8;
-  transform: scale(1.1);
-  -webkit-transform: scale(1.15);
+#skills article ul {
+  padding-left: 0;
 }
-.skills-icon:hover:after {
-  opacity: 0.5;
-  transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-}
-#skills ul li {
+#skills article ul li {
   background-color: #333;
   color: #fff;
   display: inline-block;
   list-style-type: none;
   padding: 4px;
+  margin-bottom: 2px;
 }
-#skills li span {
+#skills article ul li span {
   border-bottom: #1DCCB1 solid 2px;
+}
+.skills-icon {
+  box-shadow: 0px 0px 6px #000 inset, 0px 0px 6px #000;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+  border: #ffffff solid 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.skills-icon .fill {
+  margin-left: -20px;
+  margin-top: -20px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  clip: rect(0, 100px, 100px, 50px);
+}
+.skills-icon .fill .slice-left {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: #13d1ce solid 20px;
+  clip: rect(0, 50px, 100px, 0);
+}
+.skills-icon .fill .slice-right {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: #13d1ce solid 20px;
+  clip: rect(0, 100px, 100px, 50px);
+}
+.skills-icon .gt50 {
+  clip: rect(auto auto auto auto);
+}
+.skills-icon .gt50 .slice-left {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.skills-icon .gt50 .slice-right {
+  -webkit-transform: rotate(360deg) !important;
+  -moz-transform: rotate(360deg) !important;
+  transform: rotate(360deg) !important;
+}
+.skills-icon .perc {
+  position: absolute;
+  font-size: 18px;
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+  margin-left: -20px;
+  text-align: center;
+  font-weight: 700;
 }
 @media only screen and (max-width: 991px) {
   #wrapper {
